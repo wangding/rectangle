@@ -1,5 +1,7 @@
 {
   "env": {
+    "es6": true,
+    "node": true,
     "browser": true,
     "jquery": true
   },
@@ -25,6 +27,7 @@
       "error",
       "always"
     ],
+    "no-unused-vars": "off",
     "no-console": [
       "error",
       { "allow": ["error"] }
