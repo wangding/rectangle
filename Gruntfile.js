@@ -41,12 +41,8 @@ module.exports = function (grunt) {
     cssmin: {
       'dist/rectangle.css': 'rectangle.css'
     },
-    uglify: {
-      release:{
-        files: {
-          'dist/bundle.min.js': 'dist/bundle.js',
-        }
-      }
+    terser: {
+      'dist/bundle.min.js': 'dist/bundle.js',
     },
     useminPrepare: {
       html: 'index.html',
@@ -81,7 +77,7 @@ module.exports = function (grunt) {
   grunt.loadNpmTasks('grunt-mocha');
   grunt.loadNpmTasks('grunt-contrib-htmlmin');
   grunt.loadNpmTasks('grunt-contrib-cssmin');
-  grunt.loadNpmTasks('grunt-contrib-uglify');
+  grunt.loadNpmTasks('grunt-terser');
   grunt.loadNpmTasks('grunt-contrib-concat');
   grunt.loadNpmTasks('grunt-contrib-copy');
   grunt.loadNpmTasks('grunt-usemin');
@@ -89,5 +85,5 @@ module.exports = function (grunt) {
 
   grunt.registerTask('lint', ['htmlhint', 'csslint', 'eslint']);
   grunt.registerTask('unitTest', ['mocha']);
-  grunt.registerTask('release', ['copy', 'useminPrepare', 'concat', 'uglify', 'usemin', 'cssmin', 'htmlmin', 'clean']);
+  grunt.registerTask('release', ['copy', 'useminPrepare', 'concat', 'terser', 'usemin', 'cssmin', 'htmlmin', 'clean']);
 };
